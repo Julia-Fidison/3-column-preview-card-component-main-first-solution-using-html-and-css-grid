@@ -1,0 +1,173 @@
+/* Import google font */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+html {
+    font-size: 15px;
+}
+/* Color use */
+:root {
+    /* Primary */
+
+    --BrightOrange: hsl(31, 77%, 52%);
+    --DarkCyan: hsl(184, 100%, 22%);
+    --VeryDarkCyan: hsl(179, 100%, 13%);
+
+    /* Neutral */
+
+    --TransparentWhite: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+    --VeryLightGray: hsl(0, 0%, 95%); /* background, headings, buttons */
+}
+
+*, *::backdrop, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background: var(--VeryLightGray);
+}
+
+/* Center the main container */
+main {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Using css grid properties to get the three layout of the main card */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(400px, auto);
+}
+
+/*Background color of the layout*/
+.one {
+    background: var(--BrightOrange);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.two {
+   background: var(--DarkCyan); 
+}
+.three {
+    background: var(--VeryDarkCyan);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Styling button*/
+button {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    position:absolute;
+    bottom: 10%;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/*Styling the color of the button*/
+.btn-one {
+    color: var(--BrightOrange);
+}
+.btn-two {
+    color: var(--DarkCyan);
+}
+.btn-three {
+    color: var(--VeryDarkCyan);
+}
+/*Styling hover effect of the button*/
+
+.btn-one:hover {
+    background-color: var(--BrightOrange);
+    border: 2px solid var(--VeryLightGray);
+    color: var(--VeryLightGray); 
+}
+
+.btn-two:hover{
+    background-color: var(--DarkCyan);
+    border: 2px solid var(--VeryLightGray);
+    color: var(--VeryLightGray); 
+}
+
+.btn-three:hover{
+    background-color: var(--VeryDarkCyan);
+    border: 2px solid var(--VeryLightGray);
+    color: var(--VeryLightGray); 
+}
+
+article {
+    padding: 30px;
+}
+
+h1 {
+    color: var(--VeryLightGray);
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+p {
+    color: var(--TransparentWhite);
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/*Styling footer attribution*/
+.attribution { 
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Media query for all different kind of screen size*/
+
+
+/*iPad or tablets device*/
+@media screen and (max-width:992px) {
+    .container {
+        width: 65%
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/*Mobile device*/
+@media  screen and (max-width:481px) {
+    .container {
+        top: 40%;
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        height: 350px;
+    }
+    button {
+        position: relative;
+    }
+
+    .one {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+    .three {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+    .attribution { 
+        position: absolute;
+        bottom: -70%;
+    }
+}
